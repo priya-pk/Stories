@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/sign.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/19b672f528.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand" href="" target="_blank"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <%for(i=0;i<navs.length;i++){%>
+                        <li>
+                          <a class="nav-link" href="<%=navs[i].link%>"><%=navs[i].name%></a>
+              
+                        </li>
+                        <%}%>
+                    <!-- <li class="nav-item active">
+                        <a class="nav-link" href="signin.html" target="_blank">SIGN IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html" target="_blank">SIGN UP</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">CATEGORIES</a>
+                    </li> -->
+                </ul>
+
+                <ul class="nav navbar-right navbar-nav">
+                    <li>
+                        <a href="#"><i class="fa fa-search text-white mr-3" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="head"><%=title%></h1>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sign-box">
+            <h1 class="sign-head">SIGN UP</h1>
+            <form action="/signup" method="POST" onsubmit="return validation()">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="fname" class="form-control" id="fname" placeholder="First Name" name="fname">
+                        <label for="fName" id="fName"></label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="lname" class="form-control" id="lname" placeholder="Last Name" name="lname">
+                        <label for="lName" id="lName"></label>
+                    </div>
+                    <div> 
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <input type="text" class="form-control" id="email" placeholder="Username@gmail.com" name="email">
+                    <label for="email" id="error"></label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <input type="password" class="form-control" id="pwd" placeholder="Password" name="password">
+                        <label for="pwdcmt" id="pwdcmt1"></label>
+                        <p>Must contain atleast one capital letter,small letter,and a number</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="date" id="date">Date Of Birth :</label>
+                        <input type="date" class="date" name="dob">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input class="form-check-input ml-1" type="radio" name="gender" id="male" value="Male">
+                        <label class="form-check-label ml-4" for="inlineRadio1">Male</label>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input class="form-check-input" type="radio" name="gender" id="others" value="Others">
+                        <label class="form-check-label" for="inlineRadio3">Others</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="Address">Address:</label>
+                        <input type="text" class="form-control" id="address1" name="address1">
+                        <label for="address1" id="add1"></label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress2">Address 2:</label>
+                        <input type="text" class="form-control" id="address2" name="address2">
+                        <label for="address2" id="add2"></label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="city" name="city">
+                        <label for="city" id="cities"></label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <input type="text" id="state" class="form-control" name="state">
+                        <label for="state" id="states"></label>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="zip" name="zip">
+                        <label for="zip" id="Zip"></label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="phNo">Mobile Number :</label>
+                        <input type="text" class="form-control" id="phNo" name="number">
+                        <label for="phno" id="phno"></label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 ml-4">
+                        <input class="form-check-input" type="checkbox" id="check">
+                        <label class="form-check-label" for="gridCheck">Remember me </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-sign" id="log-btn">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="left-box">
+                <h1 class="left-head">Welcome Back !</h1>
+                <p class="left-para">To keep connected with us please sign in with your personal info</p>
+                <a href="/" target="_blank"><button type="button" class="btn btn-sign" id="right-sign"> Sign In</button></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="sign-foot">
+        <h3>Follow Us</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-info">Twitter</button>
+            <button type="button" class="btn btn-primary">Facebook</button>
+            <button type="button" class="btn btn-danger">Google+</button>
+        </div>
+    </div>
+    </footer>
+
+    <script src="/js/signup.js"></script>
+</body>
+
+</html>

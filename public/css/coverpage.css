@@ -1,0 +1,46 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url("images/bg4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.welcome{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center; 
+    width: 100%;
+}
+h1{
+    color: white;
+    font-size: 70px;
+    font-weight: 400;
+    letter-spacing: 3px ;
+    word-spacing: 5px;
+}
+button{
+    padding: 12px 45px;
+    cursor: pointer;
+    border-radius: 20px ;
+	color: white;
+    letter-spacing: 1px;
+    font-size: 20px;
+    transition: transform 80ms ease-in;
+    background: transparent;
+	border-color: white;
+}
+button:active{
+	transform: scale(0.95);
+}
+button:focus{				
+	outline: none;
+}

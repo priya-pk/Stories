@@ -1,0 +1,247 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar-custom{
+    background-color: rgb(11, 11, 100) ;
+}
+.nav-link{
+    color: white;
+}
+.navbar-brand{
+    color: white;
+}
+header a:hover{
+    color: aqua;
+}
+header .navbar-toggler{
+    border-color: white;
+}
+header .navbar-toggler-icon{
+   background-color: white;
+}
+.content{
+    width: 100%;
+    height: 180px;
+    background-color: #010141;
+    color: white;
+    padding-top: 20px;
+}
+.head{
+    font-size: 70px;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    }
+.col-md-3{
+    width: 300px;
+    height: 100px;
+    background-color: rgb(11, 11, 100);
+    border-radius: 10px;
+}
+
+/* body Sign in */
+
+.social-icons{
+    margin: 30px auto;  
+    text-align: center;
+} 
+.images{
+    width: 30px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d; 
+    cursor: pointer; 
+    background-color: rgb(12, 12, 128);
+    color: white; 
+    padding: 6px 1px; 
+    border-radius:50%; 
+}
+.log-box{
+    width: 450px;
+    height: 450px ;
+    position: absolute;
+    top: 50%;
+    left: 15%; 
+    padding: 10px 30px 30px 30px; 
+    color: rgba(7, 2, 75, 0.863);
+    background-color: white;  
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25 ),10px 10px rgba(0,0,0,0.22);
+}
+.right-box{
+    position: absolute;
+    top: 0;
+    left:100%;
+    width: 450px;
+    height: 450px;
+    box-sizing: border-box;
+    padding: 10px 30px 30px 30px;
+    background-image: url("/images/bg5.jpg");
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25 ),10px 10px rgba(0,0,0,0.22);
+    border-top-right-radius: 20px;
+}
+
+/* body Sign up */
+
+.sign-box{
+    width: 450px;
+    height: 1070px; 
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    padding: 10px 30px 30px 30px;
+    color: rgba(7, 2, 75, 0.863);
+    background-color: white; 
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25 ),10px 10px rgba(0,0,0,0.22);
+    
+}
+.left-box{
+    position: absolute;
+    top: 0;
+    left:100%;
+    width: 450px;
+    height: 1070px;
+    box-sizing: border-box;
+    padding: 10px 30px 30px 30px;
+    background-image: url("/images/bg5.jpg");
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top-right-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25 ),10px 10px rgba(0,0,0,0.22);
+}
+.date{
+    color: black;
+}
+.sign-foot{
+    margin-top: 1180px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left:20px;
+}
+
+/* Common */
+
+section .right-head{
+    padding-bottom: 20px;
+    letter-spacing: 2px ;
+    word-spacing: 5px;
+}
+section .right-para{
+    padding-bottom: 10px;
+    font-size: 18px;letter-spacing: 2px ;
+    letter-spacing: 2px ;
+    word-spacing: 5px;
+}
+section .left-head{
+    padding-bottom: 50px;
+    letter-spacing: 2px ;
+    word-spacing: 5px;
+}
+section .left-para{
+    padding-bottom: 40px;
+    font-size: 18px;
+    letter-spacing: 2px ;
+    word-spacing: 5px;
+}
+
+.sign-head{
+    text-align: center;
+    font-weight: 520;
+}
+
+.log-box a{
+    color: white;
+}
+a:hover  h5{
+    color: rgb(8, 237, 253);
+}
+footer{
+    margin-top: 600px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left:20px;
+    
+}
+
+/* button */
+
+section #log-btn{
+    color: white;
+    border-radius: 20px;
+    padding: 12px 45px;
+    cursor: pointer;
+    background: linear-gradient(to right , rgb(9, 9, 131),rgb(4, 3, 66));
+    width: 50%;
+    margin-left: 100px;
+    border: 0;
+	letter-spacing: 2px ;
+    word-spacing: 5px;
+	transition: transform 80ms ease-in;
+}
+
+section #right-sign{
+    color: white;
+    border-radius: 20px;
+    padding: 10px 45px;
+    cursor: pointer;
+    background: transparent;
+    border-color: white;
+    letter-spacing: 2px ;
+    word-spacing: 5px;
+	transition: transform 80ms ease-in;
+}
+button:active{
+	transform: scale(0.95);
+}
+button:focus{				
+	outline: none;
+}
+
+
+/* add books */
+
+.log{
+    width: 450px;
+    height: 450px ;
+    position: absolute;
+    top: 50%;
+    left: 15%; 
+    padding: 10px 30px 30px 30px; 
+    color: rgba(7, 2, 75, 0.863);
+    background-color: white;  
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25 ),10px 10px rgba(0,0,0,0.22);
+}
+.right{
+    position: absolute;
+    top: 0;
+    left:100%;
+    width: 450px;
+    height: 450px;
+    box-sizing: border-box;
+    padding: 10px 30px 30px 30px;
+    background-image: url("/images/bg5.jpg");
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25 ),10px 10px rgba(0,0,0,0.22);
+    border-top-right-radius: 20px;
+}
+.add-head{
+    text-align: center;
+    font-weight: 520;
+    padding-bottom: 15px;
+}
