@@ -14,11 +14,6 @@ const StoreImage=multer.diskStorage({
 });
 
 
-// const store= new MongoDBStore({
-//     uri:'mongodb://localhost:27017/library',
-//     collection:'sessions'
-//    });
-
 
 const nav = [
     {link:'/index',name:'HOME'},
