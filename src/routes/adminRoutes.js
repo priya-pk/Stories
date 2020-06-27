@@ -39,9 +39,14 @@ function router(nav){
             })
         })
     })
-    adminRouter.post('/update',function(req,res){
+    adminRouter.post('/update/:id',function(req,res){
         const id = req.params.id;
-        Bookdata.updateOne({_id:id})
+        Bookdata.updateOne({_id:id},{
+            title : req.body.title,
+            author : req.body.author,
+            genre : req.body.genre,
+            image : req.file.filename
+        })
         .then(()=>{
             res.redirect('/books');
         })

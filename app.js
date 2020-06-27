@@ -25,7 +25,7 @@ const nav = [
     {link:'/signup',name:'SIGN UP'}
 ];
 const navs = [
-    {link:'/index',name:'HOME'},
+    // {link:'/index',name:'HOME'},
    {link:'/',name:'SIGN IN'},
    {link:'/signup',name:'SIGN UP'}
 ];
@@ -35,6 +35,8 @@ const homeRouter = require("./src/routes/homeRoutes")(nav)
 const signupsRouter = require("./src/routes/signupRoutes")(navs)
 const adminRouter = require("./src/routes/adminRoutes")(nav)
 const writerRouter = require("./src/routes/writerRoutes")(nav)
+const signinRouter = require('./src/routes/signinRoutes')(navs);
+
 
 app.use(bodyParser.json()); 
 app.use(multer({storage:StoreImage}).single('image'));
@@ -48,6 +50,7 @@ app.use('/index',homeRouter);
 app.use('/signup',signupsRouter);
 app.use('/admin',adminRouter);
 app.use('/writer',writerRouter);
+app.use('/',signinRouter);
 
 
 
@@ -63,20 +66,14 @@ app.get('/',function(req,res){
 app.post('/',(req,res)=>{
     
     if(SignUpdata.findOne({email:req.body.email,password:req.body.password})){
-        // res.redirect('/index')
+        res.redirect('/index')
     }
 })
-// app.post('/',(req,res)=>{
-//     const {email,password} = req.body;
-//     SignUpdata.findOne({email:email,password:password})
-//     .then(function(){
-//             res.redirect('/index')
-//     })
-// })
 
-// app.post('/',function(req,res){
-//     res.redirect('/index');
-// });
+
+app.post('/',function(req,res){
+    res.redirect('/index');
+});
 app.post('/signup',function(req,res){
     res.redirect('/');
 });

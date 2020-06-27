@@ -35,9 +35,14 @@ function router(nav){
             })
         })
     })
-    writerRouter.post('/edit',function(req,res){
+    writerRouter.post('/edit/:id',function(req,res){
         const id = req.params.id;
-        Authordata.updateOne({_id:id})
+        Authordata.updateOne({_id:id},{
+            title : req.body.title,
+            author : req.body.author,
+            genre : req.body.genre,
+            image : req.file.filename
+        })
         .then(()=>{
             res.redirect('/authors');
         })
