@@ -12,14 +12,29 @@ signinRouter.use(express.static('./public'));
             title:'Library'
         });
     });
-    
-    signinRouter.post('/signin',(req,res)=>{
-        const {email,password} = req.body;
-        SignUpdata.findOne({email:email,password:password})
-        .then(()=>{
-                res.redirect('/index');
-        })
+
+
+
+signinRouter.post('/',(req,res)=>{
+    var data ={
+        email : req.body.email,
+        password : req.body.password
+    }
+    var signIn = SignUpdata(data);
+    SignUpdata.findOne({email:signIn.email,password:signIn.password},(er,user)=>{
+        if(er){
+            console.log(er);
+            return res.status(500).send();
+        }
+        if(!user){
+            return res.status(404).send('Invalid');
+        }
+        if(user){
+            res.redirect('/index');
+        }
     })
+})
+    
  return signinRouter;
 }
 

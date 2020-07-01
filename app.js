@@ -53,27 +53,9 @@ app.use('/writer',writerRouter);
 app.use('/',signinRouter);
 
 
-
-
-const SignUpdata = require('./src/model/SignUpdata');
-
-app.get('/',function(req,res){
-    res.render("signin",
-    {navs,
-    title:'Library'
-    });
-});
-app.post('/',(req,res)=>{
-    
-    if(SignUpdata.findOne({email:req.body.email,password:req.body.password})){
-        res.redirect('/index')
-    }
-})
-
-
-app.post('/',function(req,res){
-    res.redirect('/index');
-});
+// app.post('/',function(req,res){
+//     res.redirect('/index');
+// });
 app.post('/signup',function(req,res){
     res.redirect('/');
 });
