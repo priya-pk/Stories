@@ -1,7 +1,7 @@
 const express = require('express');
 var bodyParser=require("body-parser"); 
 const multer  = require('multer');
-
+var session = require('express-session');
 const app =  express();
 
 const StoreImage=multer.diskStorage({
@@ -37,7 +37,11 @@ const adminRouter = require("./src/routes/adminRoutes")(nav)
 const writerRouter = require("./src/routes/writerRoutes")(nav)
 const signinRouter = require('./src/routes/signinRoutes')(navs);
 
-
+app.use(session({
+    secret: 'session secret',
+    resave: false,
+    saveUninitialized: true,
+  }));
 app.use(bodyParser.json()); 
 app.use(multer({storage:StoreImage}).single('image'));
 app.use(express.urlencoded({extended:true}));
